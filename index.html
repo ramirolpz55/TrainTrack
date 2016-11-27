@@ -1,52 +1,50 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Train Tracks</title>
 
-		<!-- Bootstrap CSS -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-		<link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
-	</head>
-	<body>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Train Track</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+</head>
 
-	<!-- Navbar -->
-		<div class="container">
-			<div class="jumbotron">
-			
-				<!-- <h1>Get on Track</h1> -->
-				<center><img class="logo" src="http://reallyneet.co.uk/wp-content/uploads/2014/06/DKH_GoT_MainLogo_CMYK_0.jpg" align="middle">
-				<br>
-				<br>
-				<p>Taking you from here to there!</p>
-				<img src="http://www.animatedimages.org/data/media/75/animated-train-image-0013.gif" width=200px>
-				<!--Alt Train Image https://media.giphy.com/media/YXwmthHTL0EgM/giphy.gif -->
-			</div>
-		</div>
-	<!-- Body -->
+<body>
+    <!-- Navbar -->
+    <div class="container">
+        <div class="jumbotron">
+            <!-- <h1>Get on Track</h1> -->
+            <center><img class="logo" src="http://reallyneet.co.uk/wp-content/uploads/2014/06/DKH_GoT_MainLogo_CMYK_0.jpg" align="middle">
+                <br>
+                <br>
+                <p>Taking you from here to there!</p>
+                <img src="http://www.animatedimages.org/data/media/75/animated-train-image-0013.gif" width=200px>
+                <!--Alt Train Image https://media.giphy.com/media/YXwmthHTL0EgM/giphy.gif -->
+        </div>
+    </div>
+    <!-- Body -->
+    <div class="container">
+        <div class="panel panel-primary">
+            <!-- Default panel contents -->
+            <div class="panel-heading">Current Train Schedule</div>
+            <!-- Table -->
+            <div>
+                <table class="table table-responsive table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>Train Name</th>
+                            <th>Destination</th>
+                            <th>Frenquency (Min)</th>
+                            <th>Next Arrival</th>
+                            <th>Minutes Away</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body">
+                        <!-- 		<tr>
 
-		<div class="container">
-			<div class="panel panel-primary">
-				<!-- Default panel contents -->
-				<div class="panel-heading">Current Train Schedule</div>
-	
-				<!-- Table -->
-				<div>
-					<table class="table table-responsive table-striped table-hover">
-						<thead>
-							<tr>
-								<th>Train Name</th>
-								<th>Destination</th>
-								<th>Frenquency (Min)</th>
-								<th>Next Arrival</th>
-								<th>Minutes Away</th>
-							</tr>
-						</thead>
-						<tbody id="table-body">
-					<!-- 		<tr>
 								<td>Item1</td>
 								<td>Item2</td>
 								<td>Item3</td>
@@ -67,47 +65,41 @@
 								<td>Item4</td>
 								<td>Item5</td>
 							</tr> -->
-						</tbody>
-					</table>
-				</div>
-			</div>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="panel panel-primary">
+            <!-- Default panel contents -->
+            <div class="panel-heading">Add your Train</div>
+            <div class="panel-body">
+                <form>
+                    <div class="form-group">
+                        <label>Train Name</label>
+                        <input type="text" class="form-control" id="trainSubmit">
+                    </div>
+                    <div class="form-group">
+                        <label>Destination</label>
+                        <input type="text" class="form-control" id="destinationSubmit">
+                    </div>
+                    <div class="form-group">
+                        <label>First Train Time(HH:mm - military time)</label>
+                        <input type="text" class="form-control" id="trainTimeSubmit">
+                    </div>
+                    <div class="form-group">
+                        <label>Frequency (min)</label>
+                        <input type="text" class="form-control" id="frequencySubmit">
+                    </div>
+                    <button type="submit" id="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+    <script src="assets/javascript/moment.js"></script>
+    <script src="assets/javascript/main.js"></script>
+</body>
 
-			<div class="panel panel-primary">
-				<!-- Default panel contents -->
-				<div class="panel-heading">Add your Train</div>
-				<div class="panel-body">
-					<form>
-						<div class="form-group">
-							<label>Train Name</label>
-							<input type="text" class="form-control" id="trainSubmit">
-						</div>
-						<div class="form-group">
-							<label>Destination</label>
-							<input type="text" class="form-control" id="destinationSubmit">
-						</div>
-						<div class="form-group">
-							<label>First Train Time(HH:mm - military time)</label>
-							<input type="text" class="form-control" id="trainTimeSubmit">
-						</div>
-						<div class="form-group">
-							<label>Frequency (min)</label>
-							<input type="text" class="form-control" id="frequencySubmit">
-						</div>
-
-						<button type="submit" id="submit" class="btn btn-primary">Submit</button>
-					</form>
-				</div>		
-			</div>
-		</div>
-	
-		
-
-		
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-		<script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
-		<script src="assets/javascript/moment.js"></script>
-		<script src="assets/javascript/main.js"></script>
-
-	</body>
 </html>
